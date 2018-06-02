@@ -17,5 +17,20 @@ RSpec.describe GameQuestion, type: :model do
     it 'correct .answer_correct?' do
       expect(game_question.answer_correct?('b')).to be_truthy
     end
+
+    # Мои решения
+    it 'correct .text' do
+      expect(game_question.text).to include('В каком году была косм. одиссея')
+    end
+
+    it 'correct .level' do
+      expect(game_question.level).to be_between(0, 14).exclusive
+    end
+
+    # Решения от хорошего программиста:
+    it 'correct .level & .text delegates' do
+      expect(game_question.text).to eq(game_question.question.text)
+      expect(game_question.level).to eq(game_question.question.level)
+    end
   end
 end
