@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :question, class: Question do
     answer1 {"#{rand(2001)}"}
     answer2 {"#{rand(2001)}"}

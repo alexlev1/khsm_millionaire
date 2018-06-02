@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :game_question, class: GameQuestion do
     # Всегда одинаковое распределение ответов
     a 4

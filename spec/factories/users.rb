@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :user, class: User do
     name { "Жора_#{rand(999)}" }
 
@@ -7,6 +7,6 @@ FactoryGirl.define do
     is_admin false
     balance 0
 
-    after(:build) {|u| u.password_confirmation = u.password = "12345"}
+    after(:build) {|u| u.password_confirmation = u.password = "123456"}
   end
 end

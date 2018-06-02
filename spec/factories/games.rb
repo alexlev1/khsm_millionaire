@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :game, class: Game do
     # связь с юзером
     association :user
@@ -11,7 +11,7 @@ FactoryGirl.define do
 
     factory :game_with_questions do
       after(:build) { |game|
-        15.timew do |i|
+        15.times do |i|
           q = create(:question, level: i)
           create(:game_question, game: game, question: q)
         end
